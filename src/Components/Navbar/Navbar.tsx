@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import { Pages } from 'Pages/Routes';
 
+
 function Navbar() {
     require('./Navbar.styl')
 
@@ -31,14 +32,18 @@ function Navbar() {
     return (
         <>
             <nav className = 'navbar'>
+                <div className='logo'>
+                    <img src='./../../Resources/Common/logo.png' />
+                    <h3>Univé</h3>
+                </div>
                 {Pages.map((page, index) => {
                     return (
                             
                                 <ul>
                                     <li key={index} className='nav_menu__option'>
                                         <Link to={page.link}>
-                                        {/* {page.icon} */}
-                                        <span>{page.title}</span>
+                                            <img src={page.icon} />
+                                            <span>{page.title}</span>
                                         </Link>
                                     </li>
                                 </ul>
