@@ -1,6 +1,7 @@
 const path = require("path")
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+
 module.exports = (env) => {
     const modules = {
         
@@ -8,9 +9,9 @@ module.exports = (env) => {
               test: /\.(png|jpe?g|gif)$/i,
               loader: 'file-loader',
               options: {
-                name: `src/Resources/${url}`,
+                name: '[path][name].[.ext]',
               },
-            },
+        },
         js: {
             test: /\.ts(x?)$/,
             exclude: /node_modules/,
@@ -71,10 +72,6 @@ module.exports = (env) => {
             App: path.resolve(__dirname, 'src/App/'),
             Pages: path.resolve(__dirname, 'src/Pages/'),
         },
-        extensions: [".png", ".jpeg", ".gif"],
-        alias: {
-            Resources: path.resolve(__dirname, 'src/Resources/'),
-        }
     }
 
     return {
