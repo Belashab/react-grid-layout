@@ -11,6 +11,14 @@ html, body, #root
         font-weight: 750;
         src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 
+.wrapper
+    display: grid;
+    grid-template-columns: repeat(12, 1fr)
+    grid-column-gap: 1em
+    grid-row-gap: 1em
+    grid-auto-rows 200px
+
+
 
 body
     -webkit-font-smoothing antialiased
@@ -20,21 +28,3 @@ body
     font-family $font-main
 
     background-color $background
-
-.menu
-    display flex
-
-    padding 20px
-
-    & a
-        display inline-block
-
-        font-size 1.6rem
-
-        color #fff
-
-        text-decoration none
-
-        padding-left 10px
-        padding-right 10px
-
