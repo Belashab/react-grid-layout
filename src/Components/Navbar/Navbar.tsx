@@ -23,9 +23,7 @@ function Navbar() {
                         </ul>
                     </div>
 
-                    <Switch>
-                        {Pages.map((page, index) => <Route exact path={page.link} component={page.component} key={index} />)}
-                    </Switch>
+                    
             </div>
 
         </React.Fragment>
