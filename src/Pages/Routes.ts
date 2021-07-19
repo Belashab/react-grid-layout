@@ -24,7 +24,7 @@ export const Pages: Array<Route> = [
     {
         link: '/Dashboard',
         title: 'Dashboard',
-        icon: './../Resources/Navbar/dashboard.png',
+        icon: `${require('../Resources/Navbar/dashboard.png')}`,
         component: Dashboard,
     },
     {

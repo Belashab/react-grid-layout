@@ -11,7 +11,6 @@
         "paths": { 
             "App": ["src/App"],
             "Pages/*": ["src/Pages/*"],
-            "Resources": ["src/Resources"],
         }
     },
     "exclude": [
