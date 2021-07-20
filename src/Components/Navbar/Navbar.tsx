@@ -42,7 +42,7 @@ function Navbar() {
                                 <ul>
                                     <li key={index} className='nav_menu__option'>
                                         <Link to={page.link}>
-                                            <img src={page.icon} />
+                                            <img className={'nav_menu_' + `${page.title}`} />
                                             <span>{page.title}</span>
                                         </Link>
                                     </li>

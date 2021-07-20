@@ -5,12 +5,20 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = (env) => {
     const modules = {
         
-        imageLoader: {
-              test: /\.(png|jpe?g|gif)$/i,
-              loader: 'file-loader',
-              options: {
-                name: '[path][name].[.ext]',
-              },
+        module: {
+            rules: {
+                test: /\.(png|jpe?g|gif)$/i,
+                use:[
+                {
+                    loader: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'Resources/',
+                        publicPath: 'Resources/',
+                    },
+                },
+              ],
+            },
         },
         js: {
             test: /\.ts(x?)$/,
@@ -72,7 +80,11 @@ module.exports = (env) => {
             App: path.resolve(__dirname, 'src/App/'),
             Pages: path.resolve(__dirname, 'src/Pages/'),
         },
-    }
+        extensions: [".png", ".jpg"],
+        alias: {
+            Resources: path.resolve(__dirname, 'src/Resources/'),
+        },
+    },
 
     return {
         modules,
