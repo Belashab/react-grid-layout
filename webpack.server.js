@@ -28,17 +28,17 @@ module.exports = (env, argv) => {
             ],
         },
         entry: {
-            main: './src/Server.tsx', // Тут уже энтрипоинт сервера, который сделаем далее
+            main: './src/Server.tsx', 
         },
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, 'server'), // Все компилируем в папку server
+            path: path.resolve(__dirname, 'server'), 
         },
         performance: {
             hints: false,
         },
         optimization: optimizations,
-        target: 'node', // обязательно указываем режим сборки для node js, а не браузера
-        externals: [nodeExternals()], // исключаем node_modules
+        target: 'node', 
+        externals: [nodeExternals()], 
     }
 }

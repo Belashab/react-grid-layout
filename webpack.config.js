@@ -6,19 +6,17 @@ module.exports = (env) => {
     const modules = {
         
         module: {
-            rules: {
-                test: /\.(png|jpe?g|gif)$/i,
-                use:[
-                {
-                    loader: 'file-loader?hash=sha512&digest=hex&name=[hash].[ext]',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'Resources/',
-                        publicPath: 'Resources/',
-                    },
-                },
-              ],
+            rules:{
+                test: /.(png|woff(2)?|eot|ttf|svg|gif|jpe?g)(\?[a-z0-9=\.]+)?$/,
+            use:[
+            {
+                loader: 'url-loader',
+                options: {
+                    limit: 8192
+                  }
             },
+            ],
+        }
         },
         js: {
             test: /\.ts(x?)$/,
@@ -41,7 +39,7 @@ module.exports = (env) => {
                 {
                     loader: "stylus-loader",
                     options: {
-                        import: [ // Тут для Stylus'а можем объявить глобальные переменные или функции, чтобы каждый раз их не импортировать
+                        import: [ 
                             path.resolve(__dirname, 'src/Common/Styles/variables.styl'),
                         ],
                     }
@@ -76,13 +74,9 @@ module.exports = (env) => {
 
     const resolve = {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
-        alias: { // Тут тот же момент, что и в tsconfig.json, чтобы Webpack смог понять ссылки на директории
+        alias: {
             App: path.resolve(__dirname, 'src/App/'),
             Pages: path.resolve(__dirname, 'src/Pages/'),
-        },
-        extensions: [".png", ".jpg"],
-        alias: {
-            Resources: path.resolve(__dirname, 'src/Resources/'),
         },
     },
 

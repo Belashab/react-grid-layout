@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es5",
         "jsx": "react",
-        "noEmitOnError": true,
+        "noEmitOnError": false,
         "noUnusedLocals": true,
         "removeComments": true,
         "noImplicitAny": true,
@@ -11,7 +11,7 @@
         "paths": { 
             "App": ["src/App"],
             "Pages/*": ["src/Pages/*"],
-            "Resources/*": ["src/Resources/*"],
+            // "Resources/*": ["src/Resources/*"],
         }
     },
     "exclude": [
