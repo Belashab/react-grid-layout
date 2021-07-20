@@ -5,18 +5,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = (env) => {
     const modules = {
         
-        module: {
-            rules:{
-                test: /.(png|woff(2)?|eot|ttf|svg|gif|jpe?g)(\?[a-z0-9=\.]+)?$/,
+        imageLoader: {
+            test: /.(png|woff(2)?|eot|ttf|svg|gif|jpe?g)(\?[a-z0-9=\.]+)?$/,
             use:[
-            {
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                  }
-            },
+                {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192
+                    }
+                },
             ],
-        }
         },
         js: {
             test: /\.ts(x?)$/,
