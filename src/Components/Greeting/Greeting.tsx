@@ -1,17 +1,13 @@
-import React from "react";
+// import React from "react";
+// import { FunctionComponent } from "react";
 
-interface props {
-    name: string,
-}
+// const Greeting = (props) => {
+//     require('./Greeting.styl')
+//     return(
+//         <>
+//             <span className='component_greeting'>Welcome {props.name}</span>
+//         </>
+//     );
+// }
 
-
-function Greeting(props) {
-    require('./Greeting.styl')
-    return(
-        <>
-            <span className='component_greeting'>Welcome {props.name}</span>
-        </>
-    );
-}
-
-export default Greeting
+// export default Greeting
