@@ -45,6 +45,7 @@ module.exports = (env, argv) => {
             rules: [
                 config.modules.js,
                 config.modules.stylus,
+                config.modules.imageLoader,
             ],
         },
         plugins: [
@@ -68,3 +69,4 @@ module.exports = (env, argv) => {
         optimization: optimizations,
     }
 }
+

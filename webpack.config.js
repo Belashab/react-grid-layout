@@ -5,19 +5,19 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = (env) => {
     const modules = {
         
-        // imageLoader: {
-        //     test: /.(png|gif|jpe?g)(\?[a-z0-9=\.]+)?$/,
-        //     use:[
-        //         {
-        //             loader: 'url-loader',
-        //             options: {
-        //                 limit: 8192,
-        //                 name: '[name].[ext]',
-        //                 // publicPath: 'src/Resources',
-        //             },
-        //         },
-        //     ],
-        // },
+        imageLoader: {
+            test: /\.(png|gif|jpe?g)(\?[a-z0-9=\.]+)?$/,
+            use:[
+                {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        name: '[name].[ext]',
+                        // publicPath: 'src/Resources',
+                    },
+                },
+            ],
+        },
         js: {
             test: /\.ts(x?)$/,
             exclude: /node_modules/,
@@ -42,7 +42,7 @@ module.exports = (env) => {
                         import: [ 
                             path.resolve(__dirname, 'src/Common/Styles/variables.styl'),
                         ],
-                    }
+                    },
                 },
             ],
         },
