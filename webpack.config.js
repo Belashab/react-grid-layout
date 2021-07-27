@@ -16,7 +16,7 @@ module.exports = (env) => {
                         // publicPath: 'src/Resources',
                     },
                 },
-            ],
+            ]
         },
         js: {
             test: /\.ts(x?)$/,
@@ -43,7 +43,7 @@ module.exports = (env) => {
                             path.resolve(__dirname, 'src/Common/Styles/variables.styl'),
                         ],
                     },
-                },
+                }
             ],
         },
         stylusIsomorph: {
@@ -62,15 +62,15 @@ module.exports = (env) => {
                             path.resolve(__dirname, './src/Common/Styles/variables.styl'),
                         ],
                     }
-                },
+                }
             ],
         },
-    }
+    },
 
-    if (env === 'production') {
+    if(env === 'production') {
         modules.stylus.use.splice(2, 0, { loader: "postcss-loader" })
         modules.stylusIsomorph.use.splice(2, 0, { loader: "postcss-loader" })
-    }
+    };
 
     const resolve = {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
